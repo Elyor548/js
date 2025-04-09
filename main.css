@@ -1,0 +1,34 @@
+.Sistem {
+    text-align: center;
+}
+
+
+.Number2 {
+    display: block;
+    text-align: center;
+}
+
+
+.Number1 {
+    display: block;
+    text-align: center;
+
+}
+
+.boss-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Boss {
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: turquoise;
+    margin-top: 260px;
+}
+
+.bos {
+    padding: 20px;
+    padding-top: 60px;
+}
