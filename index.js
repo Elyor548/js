@@ -3,58 +3,161 @@ let MinusClick = document.getElementById('Minus')
 let MultiplicationClick = document.getElementById('Multiplication')
 let DivisionClick = document.getElementById('Division')
 
-function OnPlusClick() {
-    let input1 = document.getElementById('Number1')
-    let input2 = document.getElementById('Number2')
 
-    let Number1 = Number(input1.value)
-    let Number2 = Number(input2.value)
+let input1 = document.getElementById('number1');
+let input2 = document.getElementById('number2');
 
-    let summ = Number1 + Number2 
+
+function makeOperation(operationCode) {
     
-    window.alert(summ)
+    let number1 = Number(input1.value);
+    let number2 = Number(input2.value);
+    let result;
+
+
+    if (operationCode === '+') {
+         result = number1 + number2;
+    } else if (operationCode === '-') {
+         result = number1 - number2;
+    } else if (operationCode === '*') {
+         result = number1 * number2;
+    } else if (operationCode === '/') {
+         result = number1 / number2;
+    } else {
+        window.alert('operation is unknown')
+    }
+    window.alert(result);
+
+} 
+
+function onOperationButtonClick(eventObject) {
+    let clickedElement = eventObject.currentTarget;
+    let operation = clickedElement.innerHTML;
+    makeOperation(operation);
 
 }
 
-function OnMinusClick() {
-    let input1 = document.getElementById('Number1')
-    let input2 = document.getElementById('Number2')
+// function addCommonEventListener(i) {
+//      Operationbuttons[i].addEventListener('click' , onOperationButtonClick)
 
-    let Number1 = Number(input1.value)
-    let Number2 = Number(input2.value)
+// }
 
-    let summ = Number1 - Number2
+let Operationbuttons = [PlusClick, MinusClick,  MultiplicationClick, DivisionClick]
 
-    window.alert(summ)
-}
 
-function OnMultiplicationClick() {
-    let input1 = document.getElementById('Number1')
-    let input2 = document.getElementById('Number2')
-
-    let Number1 = Number(input1.value)
-    let Number2 = Number(input2.value)
-
-    let summ = Number1 * Number2
-
-    window.alert(summ)
-}
-
-function OnDivisionClick() {
-    let input1 = document.getElementById('Number1')
-    let input2 = document.getElementById('Number2')
-
-    let Number1 = Number(input1.value)
-    let Number2 = Number(input2.value)
-
-    let summ = Number1 / Number2
-
-    window.alert(summ)
+for (let i = 0; i < Operationbuttons.length; i++) {
+     let button = Operationbuttons[i];
+     button.addEventListener('click' , onOperationButtonClick);    // итерация
 }
 
 
+// Operationbuttons[0].addEventListener('click' , onOperationButtonClick)
+// Operationbuttons[1].addEventListener('click' , onOperationButtonClick)
+// Operationbuttons[2].addEventListener('click' , onOperationButtonClick)
+// Operationbuttons[3].addEventListener('click' , onOperationButtonClick)
 
-PlusClick.addEventListener('click' , OnPlusClick)
-MinusClick.addEventListener('click' , OnMinusClick)
-MultiplicationClick.addEventListener('click' , OnMultiplicationClick)
-DivisionClick.addEventListener('click' , OnDivisionClick)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// / function OnPlusClick() {
+    //     let input1 = document.getElementById('Number1')
+    //     let input2 = document.getElementById('Number2')
+    
+    //     let Number1 = Number(input1.value)
+    //     let Number2 = Number(input2.value)
+    
+    //     let summ = Number1 + Number2 
+        
+    //     window.alert(summ)
+    
+    // }
+    
+    // function OnMinusClick() {
+    //     let input1 = document.getElementById('Number1')
+    //     let input2 = document.getElementById('Number2')
+    
+    //     let Number1 = Number(input1.value)
+    //     let Number2 = Number(input2.value)
+    
+    //     let summ = Number1 - Number2
+    
+    //     window.alert(summ)
+    // }
+    
+    // function OnMultiplicationClick() {
+    //     let input1 = document.getElementById('Number1')
+    //     let input2 = document.getElementById('Number2')
+    
+    //     let Number1 = Number(input1.value)
+    //     let Number2 = Number(input2.value)
+    
+    //     let summ = Number1 * Number2
+    
+    //     window.alert(summ)
+    // }
+    
+    // function OnDivisionClick() {
+    //     let input1 = document.getElementById('Number1')
+    //     let input2 = document.getElementById('Number2')
+    
+    //     let Number1 = Number(input1.value)
+    //     let Number2 = Number(input2.value)
+    
+    //     let summ = Number1 / Number2
+    
+    //     window.alert(summ)
+    // }
+    //  это изначальный код
